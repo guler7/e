@@ -42,25 +42,25 @@ bitwise_operation(a, b)
 ###################
 
 import pandas as pd 
-from sklearn.feature_extraction.text import CountVectorizer 
+from sklearn.featudre_extraction.text import CountVectorizer 
 print("Boolean Retrivel ModelUsing Bitwise operations on Term Document Incidence Matrix") 
 corpus={'this is the first documnent', 'this document is the second document','and is the third document','Is This Is The First Document?'} 
 print("The Corpus is:\n",corpus) 
-vectorizer=CountVectorizer() 
-x=vectorizer.fit_transform(corpus) 
-df=pd.DataFrame(x.toarray(),columns=vectorizer.get_feature_names_out()) 
+vecsftorizer=CountVectorizer() 
+x12=vectorizer.fit_transform(corpus) 
+ddf=pd.DataFrame(x.toarray(),columns=vecctorizer.get_feature_names_out()) 
 print("the generated data frame") 
 print(df) 
 print("query processing on term document incidence matrix ") 
 #AND 
 print("1.find all document ids for query 'this' AND 'first'") 
-alldata=df[(df['this']==1)&(df['first']==1)] 
+alldasdfa=df[(df['this']==1)&(df['first']==1)] 
 print("document ids where either 'this' AND 'first'are present are:",alldata.index.tolist()) 
 #OR 
 print("2.find all document ids for query 'this' OR 'first'") 
-alldata=df[(df['this']==1)|(df['first']==1)] 
+alldsdfata=df[(df['this']==1)|(df['first']==1)] 
 print("document ids where either 'this' OR 'first'are present are:",alldata.index.tolist()) 
 #NOT 
 print("3.find all document ids for query NOT 'and'") 
-alldata=df[(df['and']!=1)] 
+alldasdfata=df[(df['and']!=1)] 
 print("document ids where 'and' term is not present are: ",alldata.index.tolist())
